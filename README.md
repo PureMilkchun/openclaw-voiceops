@@ -54,11 +54,39 @@ Copy this folder into your skill location, for example under `$CODEX_HOME/skills
 ### Claude Code / OpenCode
 Install this folder in the agent's local skills/extensions directory, then invoke it explicitly in prompts using the skill name or your tool's equivalent skill mechanism.
 
+## Quick Start
+1. Clone or download this repository.
+2. Place `openclaw-voiceops` into your agent's skills directory.
+3. Ask your agent to use `$openclaw-voiceops` for one of these tasks:
+   - inspect an existing OpenClaw voice stack
+   - deploy local Qwen TTS on Apple Silicon
+   - repair Telegram voice routing
+   - diagnose cron text/voice duplication
+
+### Example Prompts
+- `Use $openclaw-voiceops to inspect my OpenClaw + Telegram + local Qwen TTS setup on this Mac mini.`
+- `Use $openclaw-voiceops to switch Telegram voice output to my local Qwen TTS service.`
+- `Use $openclaw-voiceops to diagnose why my scheduled voice jobs are duplicating text and voice.`
+- `Use $openclaw-voiceops to generate a simple runbook for my OpenClaw setup.`
+
+## Recommended Install Paths
+- Codex: `$CODEX_HOME/skills/openclaw-voiceops`
+- Claude Code: your local skills directory for Claude Code
+- OpenCode: your local skills/extensions directory for OpenCode
+
+This repository keeps one canonical workflow and does not maintain three divergent implementations.
+
 ## Validation
 This skill was validated with:
 - shell script syntax checks
 - Python syntax checks
 - the Codex `quick_validate.py` skill validator
+
+## Repository Goals
+- Make Apple Silicon OpenClaw voice stacks reproducible
+- Encode safe inspection-first agent operations
+- Package real-world routing, recovery, and rollback workflows into reusable assets
+- Reduce the amount of one-off shell debugging needed to get a local voice assistant working
 
 ## Notes
 - This repository does not include secrets, tokens, personal chat IDs, or machine-specific usernames.
@@ -93,6 +121,31 @@ This skill was validated with:
 2. 先解释问题和修复方向
 3. 只有在用户明确要求时才执行改动
 
+### 安装
+#### Codex
+把 `openclaw-voiceops` 放到 `$CODEX_HOME/skills/openclaw-voiceops`。
+
+#### Claude Code
+放到你本地的 Claude Code skills 目录，再按当前工作流显式调用。
+
+#### OpenCode
+放到 OpenCode 使用的 skills/extensions 目录，再在提示词中显式启用。
+
+### 快速开始
+1. 克隆或下载本仓库。
+2. 把 `openclaw-voiceops` 目录放进你的代理 skills 目录。
+3. 让代理用 `$openclaw-voiceops` 执行如下任务之一：
+   - 检查现有 OpenClaw 语音栈
+   - 在 Apple Silicon 上部署本地 Qwen TTS
+   - 修复 Telegram 语音路由
+   - 排查 cron 文本/语音重复问题
+
+### 示例提示词
+- `Use $openclaw-voiceops to inspect my OpenClaw + Telegram + local Qwen TTS setup on this Mac mini.`
+- `Use $openclaw-voiceops to switch Telegram voice output to my local Qwen TTS service.`
+- `Use $openclaw-voiceops to diagnose why my scheduled voice jobs are duplicating text and voice.`
+- `Use $openclaw-voiceops to generate a simple runbook for my OpenClaw setup.`
+
 ### 目录说明
 - `SKILL.md`：skill 主入口
 - `agents/openai.yaml`：Codex 元数据
@@ -104,6 +157,12 @@ This skill was validated with:
 - 主要编排层：OpenClaw
 - 主通道：Telegram
 - 本地语音：Qwen3-TTS 路线
+
+### 仓库目标
+- 让 Apple Silicon 上的 OpenClaw 语音栈可复现
+- 把“先检查再修复”的 agent 运维方式固化下来
+- 把真实踩坑得到的路由、恢复、回滚流程沉淀成可复用资源
+- 减少每次部署时重复写脚本和重复排障的成本
 
 ### 不包含的范围
 - Linux / CUDA 为主的部署方案

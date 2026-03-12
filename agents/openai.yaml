@@ -1,0 +1,7 @@
+interface:
+  display_name: "OpenClaw VoiceOps"
+  short_description: "Repair and customize OpenClaw voice stacks on Apple Silicon Macs."
+  default_prompt: "Use $openclaw-voiceops to inspect, deploy, repair, or customize an OpenClaw + local Qwen TTS + Telegram stack on an Apple Silicon Mac mini."
+
+policy:
+  allow_implicit_invocation: true

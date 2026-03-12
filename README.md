@@ -1,5 +1,8 @@
 # OpenClaw VoiceOps
 
+[![Validate](https://github.com/PureMilkchun/openclaw-voiceops/actions/workflows/validate.yml/badge.svg)](https://github.com/PureMilkchun/openclaw-voiceops/actions/workflows/validate.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/PureMilkchun/openclaw-voiceops/blob/main/LICENSE)
+
 English | [中文](#中文说明)
 
 A cross-agent skill pack for `Codex`, `Claude Code`, and `OpenCode` to deploy, inspect, repair, and customize an `OpenClaw + local Qwen TTS + Telegram` stack on Apple Silicon Macs.
@@ -54,6 +57,11 @@ Copy this folder into your skill location, for example under `$CODEX_HOME/skills
 ### Claude Code / OpenCode
 Install this folder in the agent's local skills/extensions directory, then invoke it explicitly in prompts using the skill name or your tool's equivalent skill mechanism.
 
+### Install Paths
+- Codex: `$CODEX_HOME/skills/openclaw-voiceops`
+- Claude Code: your local Claude Code skills directory
+- OpenCode: your local OpenCode skills/extensions directory
+
 ## Quick Start
 1. Clone or download this repository.
 2. Place `openclaw-voiceops` into your agent's skills directory.
@@ -69,12 +77,13 @@ Install this folder in the agent's local skills/extensions directory, then invok
 - `Use $openclaw-voiceops to diagnose why my scheduled voice jobs are duplicating text and voice.`
 - `Use $openclaw-voiceops to generate a simple runbook for my OpenClaw setup.`
 
-## Recommended Install Paths
-- Codex: `$CODEX_HOME/skills/openclaw-voiceops`
-- Claude Code: your local skills directory for Claude Code
-- OpenCode: your local skills/extensions directory for OpenCode
-
 This repository keeps one canonical workflow and does not maintain three divergent implementations.
+
+## CI
+GitHub Actions validates:
+- shell syntax for `scripts/*.sh`
+- Python syntax for `scripts/*.py`
+- presence and basic shape of skill metadata
 
 ## Validation
 This skill was validated with:
@@ -130,6 +139,11 @@ This skill was validated with:
 
 #### OpenCode
 放到 OpenCode 使用的 skills/extensions 目录，再在提示词中显式启用。
+
+#### 推荐安装路径
+- Codex：`$CODEX_HOME/skills/openclaw-voiceops`
+- Claude Code：本地 Claude Code skills 目录
+- OpenCode：本地 OpenCode skills/extensions 目录
 
 ### 快速开始
 1. 克隆或下载本仓库。
